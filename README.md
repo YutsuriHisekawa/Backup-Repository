@@ -1,3 +1,3 @@
 # Hello I'm Fahrizal
 
-**Ya Begitulah Kira kira.**
+** ini project saya , terimakasih sudah mampir. **
