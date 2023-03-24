@@ -4,7 +4,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dashboard - Mazer Admin Dashboard</title>
+    <title>Admin Dashboard</title>
 
     <link rel="stylesheet" href="assets/css/main/app.css" />
     <link rel="stylesheet" href="assets/css/main/app-dark.css" />
@@ -108,28 +108,86 @@
               <li class="sidebar-item active">
                 <a href="home" class="sidebar-link">
                   <i class="bi bi-grid-fill"></i>
-                  <span>Home</span>
+                  <span>Dashboard</span>
                 </a>
               </li>
 
-            <a href="#" class="sidebar-link">
-                  <i class="bi bi-person-badge-fill"></i>
-                  <span>Member</span>
-
+              <li class="sidebar-item has-sub">
                 <a href="#" class="sidebar-link">
-                  <i class="bi bi-basket-fill"></i>
-                  <span>Product</span>
+                  <i class="bi bi-person-badge-fill"></i>
+                  <span>Master</span>
                 </a>
+                <ul class="submenu">
+                  <li class="submenu-item">
+                    <a href="component-alert.html">Member</a>
+                  </li>
+                  <li class="submenu-item">
+                    <a href="component-badge.html">Kategori</a>
+                  </li>
+                  <li class="submenu-item">
+                    <a href="component-breadcrumb.html">Produk</a>
+                  </li>
+                  <li class="submenu-item">
+                    <a href="component-button.html">Supplier</a>
+                  </li>
+                </ul>
+              </li>
 
+                <li class="sidebar-item has-sub">
                 <a href="#" class="sidebar-link">
                   <i class="bi bi-cash"></i>
-                  <span>Transaction</span>
+                  <span>Transaksi</span>
                 </a>
+                <ul class="submenu">
+                  <li class="submenu-item">
+                    <a href="extra-component-avatar.html">Pengeluaran</a>
+                  </li>
+                  <li class="submenu-item">
+                    <a href="extra-component-sweetalert.html">Daftar Pembelian</a>
+                  </li>
+                  <li class="submenu-item">
+                    <a href="extra-component-toastify.html">Transaksi Pembelian</a>
+                  </li>
+                  <li class="submenu-item">
+                    <a href="extra-component-rating.html">Daftar Penjualan</a>
+                  </li>
+                  <li class="submenu-item">
+                    <a href="extra-component-divider.html">Transaksi Penjualan</a>
+                  </li>
+                </ul>
+              </li>
 
+              <li class="sidebar-item has-sub">
                 <a href="#" class="sidebar-link">
                   <i class="bi bi-file-earmark-medical-fill"></i>
-                  <span>Chart and Report</span>
+                  <span>Report</span>
                 </a>
+                <ul class="submenu">
+                  <li class="submenu-item">
+                    <a href="extra-component-avatar.html">Laporan</a>
+                  </li>
+                  </li>
+                </ul>
+              </li>
+
+
+              <li class="sidebar-item has-sub">
+                <a href="#" class="sidebar-link">
+                  <i class="bi bi-puzzle"></i>
+                  <span>Pengaturan</span>
+                </a>
+                <ul class="submenu">
+                  <li class="submenu-item">
+                    <a href="extra-component-avatar.html">User</a>
+                  </li>
+                  <li class="submenu-item">
+                    <a href="extra-component-sweetalert.html">Setting</a>
+                  </li>
+                  <li class="submenu-item">
+                    <a href="extra-component-toastify.html">Profile</a>
+                  </li>
+                </ul>
+              </li>
 
                 <li class="sidebar-link">
                 <i class="bi bi-x-octagon-fill"></i>
