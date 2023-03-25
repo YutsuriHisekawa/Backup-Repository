@@ -1,14 +1,15 @@
 
-<!DOCTYPE html>
+<!DO CYPE hml>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
+  <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin Dashboard</title>
-
+ 
     <link rel="stylesheet" href="assets/css/main/app.css" />
     <link rel="stylesheet" href="assets/css/main/app-dark.css" />
-    <link rel="stylesheet" href="assets/css/main/apps.css" />
+
+
     <link
       rel="shortcut icon"
       href="assets/images/logo/favicon.svg"
@@ -19,22 +20,14 @@
       href="assets/images/logo/favicon.png"
       type="image/png"
     />
-
-    <link rel="stylesheet" href="assets/css/shared/iconly.css" />
   </head>
-  @yield('css')
+
   <body>
-    <script src="assets/js/initTheme.js"></script>
     <div id="app">
       <div id="sidebar" class="active">
-        <div class="sidebar-wrapper active">
-        <div class="card-body py-5 px-5">
+        <div class="sidebar-wrapper">
+          <div class="sidebar-header position-relative">
             <div class="d-flex justify-content-between align-items-center">
-              <div class="logo">
-                <a href="home"
-                  ><img src="assets/images/logo/logo.png" class= size alt="Logo" srcset=""
-                /></a>
-              </div>
               <div class="theme-toggle d-flex gap-2 align-items-center mt-2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -100,12 +93,11 @@
               </div>
             </div>
           </div>
-              
           <div class="sidebar-menu">
             <ul class="menu">
               <li class="sidebar-title">Menu</li>
-            
-              <li class="sidebar-item active">
+
+              <li class="sidebar-item">
                 <a href="home" class="sidebar-link">
                   <i class="bi bi-grid-fill"></i>
                   <span>Dashboard</span>
@@ -122,7 +114,7 @@
                     <a href="component-alert.html">Member</a>
                   </li>
                   <li class="submenu-item">
-                    <a href="component-badge.html">Kategori</a>
+                    <a href="{{ route ('kategori.index')}}">Kategori</a>
                   </li>
                   <li class="submenu-item">
                     <a href="component-breadcrumb.html">Produk</a>
@@ -133,9 +125,9 @@
                 </ul>
               </li>
 
-                <li class="sidebar-item has-sub">
+              <li class="sidebar-item has-sub">
                 <a href="#" class="sidebar-link">
-                  <i class="bi bi-cash"></i>
+                  <i class="bi bi-basket-fill"></i>
                   <span>Transaksi</span>
                 </a>
                 <ul class="submenu">
@@ -149,7 +141,7 @@
                     <a href="extra-component-toastify.html">Transaksi Pembelian</a>
                   </li>
                   <li class="submenu-item">
-                    <a href="extra-component-rating.html">Daftar Penjualan</a>
+                    <a href="extra-component-rating.html">Dafta Penjualan</a>
                   </li>
                   <li class="submenu-item">
                     <a href="extra-component-divider.html">Transaksi Penjualan</a>
@@ -162,194 +154,174 @@
                   <i class="bi bi-file-earmark-medical-fill"></i>
                   <span>Report</span>
                 </a>
-                <ul class="submenu">
-                  <li class="submenu-item">
-                    <a href="extra-component-avatar.html">Laporan</a>
-                  </li>
-                  </li>
-                </ul>
-              </li>
-
-
-              <li class="sidebar-item has-sub">
-                <a href="#" class="sidebar-link">
-                  <i class="bi bi-puzzle"></i>
-                  <span>Pengaturan</span>
-                </a>
-                <ul class="submenu">
-                  <li class="submenu-item">
-                    <a href="extra-component-avatar.html">User</a>
-                  </li>
-                  <li class="submenu-item">
-                    <a href="extra-component-sweetalert.html">Setting</a>
-                  </li>
-                  <li class="submenu-item">
-                    <a href="extra-component-toastify.html">Profile</a>
-                  </li>
-                </ul>
-              </li>
-
-                <li class="sidebar-link">
-                <i class="bi bi-x-octagon-fill"></i>
-                    <a class="sidebar-link" href="{{ route('logout') }}"
-                        onclick="event.preventDefault();document.getElementById('logout-form').submit();">
-                        {{ __('Logout') }}
-                    </a>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                        @csrf
-                    </form>
+                <ul class="submenu ">
+                <li class="submenu-item">
+                    <a href="layout-default.html">Laporan</a>
                 </li>
+                </ul>
+              </li>
 
             </ul>
           </div>
         </div>
       </div>
-      <div id="main">
+
+    
+      <div id="main" class="layout-navbar navbar-fixed">
         <header class="mb-3">
-          <a href="#" class="burger-btn d-block d-xl-none">
-            <i class="bi bi-justify fs-3"></i>
-          </a>
+          <nav class="navbar navbar-expand navbar-light navbar-top">
+            <div class="container-fluid">
+              <a href="#" class="burger-btn d-block">
+                <i class="bi bi-justify fs-3"></i>
+              </a>
 
-          <div class="card">
-                <div class="card-body py-5 px-5">
-                  <div class="d-flex align-items-center">
-                    <div class="avatar avatar-x1">
-                      <img src="assets/images/faces/1.png" alt="Face 1" />
-                    </div>
-                    <div class="ms-3 name">
-                      <h5 class="font-bold">{{ Auth::user()->name }}</h5>
-                      <h6 class="text-muted mb-0">Yutsuri Hisekawa</h6>
-                    </div>
-                  </div>
-                </div>
-              </div> 
-              
-        </header>
-
-        <div class="center">
-          <h3>Profile Statistics</h3>
-        </div>
-        
-        <div class="page-content">
-          <section class="row">
-            <div class="card">
-              <div class="row">
-                <div class="col-6 col-lg-3 col-md-6">
-                  <div class="card">
-                    <div class="card-body px-4 py-4-5">
-                      <div class="row">
-                        <div
-                          class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start"
-                        >
-                          <div class="stats-icon purple mb-2">
-                            <i class="iconly-boldShow"></i>
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-lg-0">
+                  <li class="nav-item dropdown me-1">
+                    <a
+                      class="nav-link active dropdown-toggle text-gray-600"
+                      href="#"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      <i class="bi bi-envelope bi-sub fs-4"></i>
+                    </a>
+                    <ul
+                      class="dropdown-menu dropdown-menu-end"
+                      aria-labelledby="dropdownMenuButton"
+                    >
+                      <li>
+                        <h6 class="dropdown-header">Mail</h6>
+                      </li>
+                      <li><a class="dropdown-item" href="#">No new mail</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item dropdown me-3">
+                    <a
+                      class="nav-link active dropdown-toggle text-gray-600"
+                      href="#"
+                      data-bs-toggle="dropdown"
+                      data-bs-display="static"
+                      aria-expanded="false"
+                    >
+                      <i class="bi bi-bell bi-sub fs-4"></i>
+                    </a>
+                    <ul
+                      class="dropdown-menu dropdown-menu-end notification-dropdown"
+                      aria-labelledby="dropdownMenuButton"
+                    >
+                      <li class="dropdown-header">
+                        <h6>Notifications</h6>
+                      </li>
+                      <li class="dropdown-item notification-item">
+                        <a class="d-flex align-items-center" href="#">
+                          <div class="notification-icon bg-primary">
+                            <i class="bi bi-cart-check"></i>
                           </div>
-                        </div>
-                        <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
-                          <h6 class="text-muted font-semibold">
-                            Profile Views
-                          </h6>
-                          <h6 class="font-extrabold mb-0">112.000</h6>
+                          <div class="notification-text ms-4">
+                            <p class="notification-title font-bold">
+                              Successfully check out
+                            </p>
+                            <p class="notification-subtitle font-thin text-sm">
+                              Order ID #256
+                            </p>
+                          </div>
+                        </a>
+                      </li>
+                      <li class="dropdown-item notification-item">
+                        <a class="d-flex align-items-center" href="#">
+                          <div class="notification-icon bg-success">
+                            <i class="bi bi-file-earmark-check"></i>
+                          </div>
+                          <div class="notification-text ms-4">
+                            <p class="notification-title font-bold">
+                              Homework submitted
+                            </p>
+                            <p class="notification-subtitle font-thin text-sm">
+                              Algebra math homework
+                            </p>
+                          </div>
+                        </a>
+                      </li>
+                      <li>
+                        <p class="text-center py-2 mb-0">
+                          <a href="#">See all notification</a>
+                        </p>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+                <div class="dropdown">
+                  <a href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                    <div class="user-menu d-flex">
+                      <div class="user-name text-end me-3">
+                        <h6 class="mb-0 text-gray-600">{{ Auth::user()->name }}</h6>
+                        <p class="mb-0 text-sm text-gray-600">Administrator</p>
+                      </div>
+                      <div class="user-img d-flex align-items-center">
+                        <div class="avatar avatar-md">
+                          <img src="assets/images/faces/1.jpg" />
                         </div>
                       </div>
                     </div>
-                  </div>
-                </div>
-                <div class="col-6 col-lg-3 col-md-6">
-                  <div class="card">
-                    <div class="card-body px-4 py-4-5">
-                      <div class="row">
-                        <div
-                          class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start"
-                        >
-                          <div class="stats-icon blue mb-2">
-                            <i class="iconly-boldProfile"></i>
-                          </div>
-                        </div>
-                        <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
-                          <h6 class="text-muted font-semibold">Followers</h6>
-                          <h6 class="font-extrabold mb-0">183.000</h6>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-6 col-lg-3 col-md-6">
-                  <div class="card">
-                    <div class="card-body px-4 py-4-5">
-                      <div class="row">
-                        <div
-                          class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start"
-                        >
-                          <div class="stats-icon green mb-2">
-                            <i class="iconly-boldAdd-User"></i>
-                          </div>
-                        </div>
-                        <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
-                          <h6 class="text-muted font-semibold">Following</h6>
-                          <h6 class="font-extrabold mb-0">80.000</h6>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-6 col-lg-3 col-md-6">
-                  <div class="card">
-                    <div class="card-body px-4 py-4-5">
-                      <div class="row">
-                        <div
-                          class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start"
-                        >
-                          <div class="stats-icon red mb-2">
-                            <i class="iconly-boldBookmark"></i>
-                          </div>
-                        </div>
-                        <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
-                          <h6 class="text-muted font-semibold">Saved Post</h6>
-                          <h6 class="font-extrabold mb-0">112</h6>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="card">
-                  <div class="card">
-                    <div class="card-header">
-                      <h4>Profile Visit</h4>
-                    </div>
-                    <div class="card-body">
-                      <div id="chart-profile-visit"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              </div>
-            </div>          
-            <div class="card">
-                <div class="center">
-                  <h4>Visitors Profile</h4>
-                </div>
-                <div class="card-body">
-                  <div id="chart-visitors-profile"></div>
+                  </a>
+                  <ul
+                    class="dropdown-menu dropdown-menu-end"
+                    aria-labelledby="dropdownMenuButton"
+                    style="min-width: 11rem"
+                  >
+                    <li>
+                      <h6 class="dropdown-header">Hello, {{ Auth::user()->name }}</h6>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#"
+                        ><i class="icon-mid bi bi-person me-2"></i> My
+                        Profile</a
+                      >
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#"
+                        ><i class="icon-mid bi bi-gear me-2"></i> Settings</a
+                      >
+                    </li>
+                    <li>
+                      <hr class="dropdown-divider" />
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#"
+                        ><i class="icon-mid bi bi-box-arrow-left me-2"></i>
+                        Logout</a
+                      >
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
-          </section>
-        </div>
-
-
-
-
-             
+          </nav>
+        </header>
       </div>
     </div>
-    <script src="assets/js/bootstrap.js"></script>
+@yield('content')
+
+<script src="assets/js/bootstrap.js"></script>
     <script src="assets/js/app.js"></script>
 
     <!-- Need: Apexcharts -->
     <script src="assets/extensions/apexcharts/apexcharts.min.js"></script>
     <script src="assets/js/pages/dashboard.js"></script>
-  </body>
+    <script src="assets/extensions/jquery/jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/v/bs5/dt-1.12.1/datatables.min.js"></script>
+    <script src="assets/js/pages/datatables.js"></script>
+</body>
 </html>

@@ -93,3 +93,9 @@ label a{
     text-decoration: none;
     color: #fff;
 }
+
+.tengah {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
